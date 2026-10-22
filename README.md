@@ -3,7 +3,7 @@
 Modern, responsive tourism portfolio concept for an Indonesian travel brand.
 
 ## Preview
-- Live preview (when GitHub Pages is enabled): https://uknowdream.github.io/
+- Live preview (when GitHub Pages is enabled): https://uknowdream.github.io/uknowdream/
 - Source: https://github.com/uknowdream/uknowdream/blob/main/index.html
 
 ## Highlights
