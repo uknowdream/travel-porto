@@ -1,0 +1,12 @@
+{
+  "name": "nusatrip-travel-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsive Indonesian travel portfolio website",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
