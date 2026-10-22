@@ -307,6 +307,51 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 @media(max-width:900px){.nav{gap:12px}.brand{font-size:clamp(16px,2.5vw,21px)}.nav-links{gap:12px}.nav-actions{gap:8px}.nav-actions>.btn:not(.lang-toggle){display:none}.lang-toggle{display:inline-flex!important}.packages{grid-template-columns:repeat(2,minmax(0,1fr))}.package:last-child{display:flex}}
 @media(max-width:650px){.container{width:calc(100% - 28px)}.nav{gap:8px;height:68px}.brand{font-size:15px;letter-spacing:-.5px;gap:6px;min-width:0}.brand-name{overflow-wrap:anywhere;max-width:145px;line-height:1.05}.logo-shield{width:36px;height:42px}.nav-actions{gap:5px;flex:none}.nav-actions>.btn:not(.lang-toggle){display:none}.lang-toggle{display:inline-flex!important;padding:8px 9px!important;min-height:36px;font-size:11px!important}.menu-toggle{font-size:22px;padding:4px;min-width:30px}.mobile-nav{top:94px}.search-box{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.search-field select{font-size:12px}.packages{grid-template-columns:minmax(0,1fr)}.package:last-child{display:flex}.footer-top{grid-template-columns:1fr 1fr}.footer-top>div:last-child{display:block}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Travel motion layer: lightweight ambient movement inspired by the hero reference. */
+.hero-card{isolation:isolate;overflow:hidden}
+.travel-motion{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;color:#d8f078}
+.travel-motion:after{content:"";position:absolute;inset:-20%;background:linear-gradient(110deg,transparent 35%,#ffffff0a 47%,#ffffff22 50%,#ffffff05 54%,transparent 66%);transform:translateX(-70%);animation:travelLightSweep 12s ease-in-out infinite}
+.travel-balloon{position:absolute;display:grid;place-items:center;width:clamp(25px,3.2vw,43px);height:clamp(32px,4vw,52px);border-radius:52% 52% 48% 48%;font-size:12px;color:#e4f6a6;background:linear-gradient(145deg,#ffffff32,#0b6e5c55);border:1px solid #ffffff65;box-shadow:inset -7px -5px 0 #071c1b24,0 8px 24px #061b1830;animation:balloonDrift 8s ease-in-out infinite}
+.travel-balloon:after{content:"";position:absolute;top:95%;height:clamp(13px,2vw,25px);border-left:1px solid #ffffff80}
+.balloon-one{top:15%;left:8%;animation-delay:-2s}
+.balloon-two{top:27%;left:46%;transform:scale(.75);animation-delay:-5s}
+.balloon-three{top:17%;right:9%;transform:scale(.62);animation-delay:-3.5s}
+.travel-cloud{position:absolute;width:100px;height:24px;border-radius:40px;background:#e9fff01b;filter:blur(1px);animation:cloudCruise 22s linear infinite}
+.travel-cloud:before,.travel-cloud:after{content:"";position:absolute;bottom:5px;border-radius:50%;background:inherit}
+.travel-cloud:before{left:20px;width:35px;height:35px}.travel-cloud:after{left:46px;width:27px;height:27px}
+.cloud-one{top:20%;left:-120px}.cloud-two{top:39%;left:-150px;transform:scale(.7);animation-delay:-11s}
+.travel-flight{position:absolute;width:clamp(110px,17vw,210px);right:12%;top:18%;overflow:visible;opacity:.82;animation:planeGlide 11s ease-in-out infinite}
+.flight-route{stroke:#d8f078;stroke-width:1.3;stroke-dasharray:4 6;opacity:.75;animation:routeDash 12s linear infinite}
+.flight-plane{filter:drop-shadow(0 4px 10px #061b1840);animation:planeTilt 3s ease-in-out infinite}
+.travel-spark{position:absolute;font-size:24px;color:#d8f078;opacity:.8;animation:sparkle 3.5s ease-in-out infinite}
+.spark-one{right:32%;top:28%}.spark-two{right:8%;top:52%;font-size:16px;animation-delay:-1.8s}
+.hero-content{z-index:1;position:relative}
+.hero h1 em{display:inline-block;animation:highlightFloat 4.5s ease-in-out infinite}
+.hero-buttons .btn-lime{box-shadow:0 0 0 0 #d8f07870;animation:ctaPulse 4s ease-out infinite}
+.destination img,.package-img img{transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .7s}
+.destination:hover img,.package:hover .package-img img{transform:scale(1.07);filter:saturate(1.12)}
+.destination .pill,.package .pill{animation:badgeBob 5s ease-in-out infinite}
+.destination:nth-child(3n) .pill,.package:nth-child(3n) .pill{animation-delay:-2s}
+.feature-photo{background-size:cover;animation:photoBreath 16s ease-in-out infinite alternate}
+.floating-note{animation:noteFloat 5s ease-in-out infinite}
+.search-box{animation:searchLift 7s ease-in-out infinite}
+.section-head .kicker{background-image:linear-gradient(90deg,currentColor 0%,#d8f078 50%,currentColor 100%);background-size:200% auto;background-clip:text;-webkit-background-clip:text;animation:kickerShimmer 8s linear infinite}
+@keyframes balloonDrift{0%,100%{translate:0 0;rotate:-4deg}50%{translate:12px -20px;rotate:5deg}}
+@keyframes cloudCruise{from{translate:0 0}to{translate:calc(100vw + 300px) 10px}}
+@keyframes planeGlide{0%,100%{translate:0 0;rotate:-4deg}50%{translate:-20px 13px;rotate:3deg}}
+@keyframes planeTilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes routeDash{to{stroke-dashoffset:-100}}
+@keyframes sparkle{0%,100%{opacity:.25;scale:.7;rotate:0deg}50%{opacity:1;scale:1.15;rotate:25deg}}
+@keyframes travelLightSweep{0%,25%{transform:translateX(-80%)}65%,100%{transform:translateX(80%)}}
+@keyframes highlightFloat{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@keyframes ctaPulse{0%,65%,100%{box-shadow:0 0 0 0 #d8f07800}78%{box-shadow:0 0 0 9px #d8f07830}}
+@keyframes badgeBob{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@keyframes photoBreath{from{background-position:48% 50%;filter:saturate(.92)}to{background-position:53% 46%;filter:saturate(1.08)}}
+@keyframes searchLift{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@keyframes kickerShimmer{to{background-position:200% center}}
+@media(max-width:650px){.travel-flight{right:3%;top:12%;width:115px;opacity:.55}.balloon-one{left:5%;top:10%}.balloon-two{left:57%;top:20%}.balloon-three{right:5%;top:32%}.travel-cloud{opacity:.5}.travel-spark{font-size:16px}.search-box{animation:none}}
+@media(prefers-reduced-motion:reduce){.travel-motion *,.travel-motion:after,.hero h1 em,.hero-buttons .btn-lime,.destination .pill,.package .pill,.feature-photo,.search-box,.section-head .kicker{animation:none!important;transition:none!important}.travel-motion{display:none}}
 </style>
 </head>
 <body>
@@ -318,7 +363,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 </header>
 <nav class="mobile-nav" id="mobileNav" aria-label="Navigasi mobile"><a href="#destinasi">Destinasi</a><a href="#pengalaman">Pengalaman</a><a href="#paket">Paket wisata</a><a href="#cerita">Cerita</a></nav>
 <main>
-<section class="container hero" id="home"><div class="hero-card"><div class="hero-content"><span class="eyebrow">EXPLORE MORE · TRAVEL BETTER</span><h1>Temukan dunia.<br>Jalani <em>ceritamu.</em></h1><p>Temukan pesona Indonesia lewat destinasi istimewa, perjalanan penuh makna, dan pengalaman baru yang layak dikenang.</p><div class="hero-buttons"><a class="btn btn-lime" href="#destinasi">Jelajahi destinasi <span>↗</span></a><a class="btn btn-light" href="#pengalaman">Kenali layanan kami</a></div><div class="hero-foot"><div class="avatars"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt=""><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt=""><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt=""></div></div></div></div>
+<section class="container hero" id="home"><div class="hero-card"><div class="travel-motion" aria-hidden="true"><span class="travel-balloon balloon-one">✦</span><span class="travel-balloon balloon-two">✧</span><span class="travel-balloon balloon-three">✦</span><span class="travel-cloud cloud-one"></span><span class="travel-cloud cloud-two"></span><svg class="travel-flight" viewBox="0 0 180 90" fill="none"><path class="flight-route" d="M8 72 C38 8 91 8 113 43 S151 79 171 18"/><path class="flight-plane" d="M85 34l17-16 4 2-8 18 21 9-2 5-25-4-11 15-4-1 5-17-15-8 1-4 17 3Z" fill="currentColor"/></svg><span class="travel-spark spark-one">✧</span><span class="travel-spark spark-two">✦</span></div><div class="hero-content"><span class="eyebrow">EXPLORE MORE · TRAVEL BETTER</span><h1>Temukan dunia.<br>Jalani <em>ceritamu.</em></h1><p>Temukan pesona Indonesia lewat destinasi istimewa, perjalanan penuh makna, dan pengalaman baru yang layak dikenang.</p><div class="hero-buttons"><a class="btn btn-lime" href="#destinasi">Jelajahi destinasi <span>↗</span></a><a class="btn btn-light" href="#pengalaman">Kenali layanan kami</a></div><div class="hero-foot"><div class="avatars"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt=""><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt=""><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt=""></div></div></div></div>
 <div class="search-wrap"><form class="search-box" id="searchForm"><div class="search-field"><label for="destination">MAU KE MANA?</label><select id="destination"><option value="">Semua destinasi</option><option>Bali</option><option>Pantai Malang</option><option>Pantai Yogyakarta</option><option>Banyuwangi</option><option>Kawah Ijen</option><option>Bromo</option><option>Yogyakarta</option><option>Malang</option><option>Pantai</option><option>Tumpak Sewu Lumajang</option><option>Pantai Papuma Jember</option><option>Taman Nasional Baluran</option><option>Air Terjun Madakaripura</option><option>Kota Batu</option><option>Pantai Klayar Pacitan</option><option>Telaga Sarangan Magetan</option><option>Bandung</option><option>Belitung</option></select></div><div class="search-field"><label for="tripType">GAYA PERJALANAN</label><select id="tripType"><option value="">Semua pengalaman</option><option>Petualangan</option><option>Pantai & pulau</option><option>Alam & petualangan</option><option>Budaya</option><option>Relaksasi</option></select></div><div class="search-field"><label for="vehicles">JUMLAH KENDARAAN</label><select id="vehicles" required><option value="1" selected>1 kendaraan</option><option value="2">2 kendaraan</option><option value="3">3 kendaraan</option><option value="4">4 kendaraan</option><option value="5">5 kendaraan</option></select></div><button class="btn btn-dark" type="submit">Cari trip <span>↗</span></button></form></div></section>
 <section class="container section" id="destinasi"><div class="section-head"><div><span class="kicker">Jelajahi rute pilihan · 10–13 orang / mobil</span><h2>Ke mana perjalanan membawamu?</h2></div><p class="section-sub">Temukan inspirasi tujuan dan rute perjalanan untuk kebutuhan liburan, keluarga, maupun perjalanan bersama. Harga mulai ditampilkan sebagai estimasi satu kendaraan untuk rombongan 10–13 orang, bukan per orang.</p></div>
 <div class="dest-grid">
