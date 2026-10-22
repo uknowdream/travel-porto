@@ -543,6 +543,37 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
  .nav-actions .lang-toggle{padding:7px 8px;font-size:10px}
 }
 
+
+/* Refined travel footer */
+.footer{background:linear-gradient(145deg,#10271f 0%,#142f25 55%,#0d211a 100%);color:#f7f8f3;padding:68px 0 25px;position:relative;overflow:hidden}
+.footer:before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,#d6f36a70,transparent)}
+.footer>.container{position:relative;z-index:1}
+.footer-top.footer-pro{grid-template-columns:minmax(240px,1.55fr) minmax(130px,.8fr) minmax(190px,1.05fr) minmax(190px,1fr);gap:clamp(22px,3vw,42px);padding-bottom:46px}
+.footer .brand{display:inline-flex;align-items:center;gap:13px;margin-bottom:18px}
+.footer .brand-mark.logo-shield{width:44px;height:50px;flex:none;background:transparent;border:0;padding:0}
+.footer .brand-mark.logo-shield img{display:block;width:100%;height:100%;object-fit:contain}
+.footer-about .brand-name{color:#fff;font-size:19px;letter-spacing:-.045em}
+.footer-lead{max-width:320px!important;color:#bdcbc0!important;font-size:13px!important;line-height:1.85!important;margin:0 0 19px!important}
+.footer-tags{display:flex;flex-wrap:wrap;gap:7px}
+.footer-tags span{border:1px solid #ffffff22;background:#ffffff08;border-radius:999px;padding:7px 10px;color:#d3ded5;font-size:10px;letter-spacing:.01em}
+.footer-promise{display:flex;align-items:flex-start;gap:11px;margin-top:22px;padding-top:18px;border-top:1px solid #ffffff1c;max-width:330px}
+.footer-promise-mark{display:grid;place-items:center;flex:none;width:25px;height:25px;border-radius:50%;background:#d6f36a;color:#173329;font-size:13px;font-weight:900}
+.footer-promise>span:last-child{display:grid;gap:5px}
+.footer-promise strong{font-size:12px;color:#f6f8f3}
+.footer-promise small{font-size:11px;line-height:1.7;color:#adbdaf}
+.footer-top.footer-pro h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f4f7f1;margin:6px 0 20px}
+.footer-links{display:grid;align-content:start;gap:14px;color:#b7c7ba;font-size:12px;line-height:1.5}
+.footer-links a{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;transition:color .2s ease}
+.footer-links a:hover{color:#d6f36a}
+.footer-links a span{color:#d6f36a;flex:none}
+.footer-small{max-width:245px!important;font-size:10px!important;line-height:1.8!important;color:#96aa9b!important;margin:3px 0 0!important}
+.footer-contact-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;margin-top:22px;border-radius:999px;background:#d6f36a;color:#183329;padding:13px 16px;font-size:11px;font-weight:800;transition:transform .2s ease,background .2s ease}
+.footer-contact-btn:hover{transform:translateY(-2px);background:#e4ff8b}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid #ffffff20;padding-top:21px;color:#9eb1a2;font-size:10px;line-height:1.7}
+.footer-bottom span:last-child{text-align:right}
+@media(max-width:900px){.footer-top.footer-pro{grid-template-columns:1.3fr 1fr;gap:34px 42px}.footer-about{grid-row:span 1}.footer-lead{max-width:390px!important}}
+@media(max-width:560px){.footer{padding:48px 0 22px}.footer-top.footer-pro{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px 20px;padding-bottom:32px}.footer-top.footer-pro>.footer-about{grid-column:1/-1}.footer-about .brand-name{font-size:18px}.footer-lead{max-width:100%!important}.footer-promise{max-width:100%}.footer-top.footer-pro h4{font-size:10px;letter-spacing:.09em;margin-bottom:15px}.footer-links{gap:12px;font-size:11px}.footer-small{grid-column:1/-1}.footer-bottom{align-items:flex-start;flex-direction:column;gap:7px}.footer-bottom span:last-child{text-align:left}}
+
 </style>
 </head>
 <body>
@@ -674,22 +705,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <span class="brand-mark logo-shield" aria-hidden="true"><img src="logo-s71.svg?v=6" alt="" width="48" height="54"></span>
           <span class="brand-name">Syauqim71.Transport</span>
         </a>
-        <p class="footer-lead">Membantu perjalanan rombongan terasa lebih sederhana—mulai dari menyusun rute hingga membahas kebutuhan perjalanan Anda.</p>
-        <div class="footer-tags"><span>Perjalanan dinas</span><span>Wisata privat</span><span>Antar-jemput</span></div>
-        <div class="footer-promise"><span class="footer-promise-mark">✓</span><span><strong>Rencana lebih jelas</strong><small>Rute, jadwal, dan estimasi dibahas sebelum konfirmasi.</small></span></div>
+        <p class="footer-lead">Rencanakan perjalanan bersama dengan lebih tenang. Kami membantu menyelaraskan rute, jadwal, dan kebutuhan transportasi agar perjalanan rombongan terasa lebih terarah.</p>
+        <div class="footer-tags"><span>Group travel</span><span>Private tours</span><span>Transfers</span></div>
+        <div class="footer-promise"><span class="footer-promise-mark">✓</span><span><strong>Direncanakan dengan jelas</strong><small>Rute, jadwal, dan estimasi biaya dibahas sebelum Anda mengonfirmasi.</small></span></div>
       </div>
-      <div><h4>Jelajahi</h4><div class="footer-links">
-        <a href="#destinasi">Destinasi pilihan <span>↗</span></a><a href="#paket">Paket perjalanan <span>↗</span></a><a href="#layanan">Layanan kami <span>↗</span></a><a href="#pengalaman">Tentang perjalanan <span>↗</span></a>
+      <div><h4>Jelajahi perjalanan</h4><div class="footer-links">
+        <a href="#destinasi">Inspirasi destinasi <span>↗</span></a><a href="#paket">Paket perjalanan <span>↗</span></a><a href="#layanan">Layanan transportasi <span>↗</span></a><a href="#pengalaman">Pengalaman perjalanan <span>↗</span></a>
       </div></div>
-      <div><h4>Informasi perjalanan</h4><div class="footer-links">
-        <a href="#kontak">Konsultasi perjalanan <span>↗</span></a><a href="#layanan">Kapasitas rombongan</a><a href="#paket">Paket &amp; estimasi harga</a>
-        <p class="footer-small">Harga yang ditampilkan merupakan estimasi awal. Harga final dikonfirmasi setelah rute, tanggal, durasi, dan kebutuhan perjalanan dibahas.</p>
+      <div><h4>Sebelum berangkat</h4><div class="footer-links">
+        <a href="#kontak">Rencanakan perjalanan <span>↗</span></a><a href="#layanan">Kebutuhan rombongan</a><a href="#paket">Paket dan estimasi biaya</a>
+        <p class="footer-small">Estimasi dapat berubah sesuai rute, tanggal, durasi, kapasitas, dan kebutuhan perjalanan. Biaya akhir dikonfirmasi sebelum pemesanan disepakati.</p>
       </div></div>
-      <div><h4>Terhubung dengan kami</h4><div class="footer-links">
+      <div><h4>Mari rencanakan perjalanan</h4><div class="footer-links">
         <a href="https://wa.me/6282143681035" target="_blank" rel="noopener noreferrer">WhatsApp <span>↗</span></a><a href="https://www.tiktok.com/@syauqim71" target="_blank" rel="noopener noreferrer">TikTok <span>↗</span></a>
-      </div><a class="footer-contact-btn" href="https://wa.me/6282143681035?text=Halo%20Syauqim71.Transport%2C%20saya%20ingin%20konsultasi%20perjalanan%20rombongan.%20Mohon%20informasi%20langkah%20selanjutnya." target="_blank" rel="noopener noreferrer">Mulai konsultasi <span>↗</span></a></div>
+      </div><a class="footer-contact-btn" href="https://wa.me/6282143681035?text=Halo%20Syauqim71.Transport%2C%20saya%20ingin%20konsultasi%20perjalanan%20rombongan.%20Mohon%20informasi%20langkah%20selanjutnya." target="_blank" rel="noopener noreferrer">Konsultasi via WhatsApp <span>↗</span></a></div>
     </div>
-    <div class="footer-bottom"><span>© <span id="year"></span> Syauqim71.Transport. Seluruh hak cipta dilindungi.</span><span>Dirancang untuk perjalanan rombongan · Indonesia</span></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Syauqim71.Transport. Seluruh hak cipta dilindungi.</span><span>Perjalanan rombongan, direncanakan dengan lebih baik.</span></div>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
