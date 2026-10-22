@@ -49,6 +49,49 @@ html{scroll-behavior:smooth}
 @media(max-width:650px){.hero-card:after{right:-12%;top:8%;width:220px;height:220px}.hero h1{animation-delay:.06s}.destination:hover{transform:none}.floating-note{animation-duration:6s}}
 
 
+
+/* Editorial travel redesign — destinations, discovery and immersive photography */
+:root{--ink:#182b26;--muted:#6b7971;--paper:#f8f8f3;--green:#173f34;--lime:#d8f078;--line:#e4e8df;--shadow:0 18px 50px #17251f10}
+body{background:#fbfbf7}
+.topbar{background:#183d32;color:#f1f6e8;letter-spacing:.1em}
+.brand-mark{background:#d8f078;color:#173f34}
+.hero-card{background-image:url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2000&q=90');background-position:center 52%;min-height:590px}
+.hero-card:before{background:linear-gradient(90deg,#0d211bd9 0%,#10251b80 48%,#10251b08 100%),linear-gradient(0deg,#0d211b70,transparent 52%)}
+.hero-card:after{border-color:#ffffff58;box-shadow:0 0 0 25px #ffffff0b,0 0 0 55px #ffffff07}
+.hero h1 em{color:#d8f078}
+.hero-content{max-width:800px}
+.hero p{max-width:500px;font-size:16px}
+.btn-dark{background:#173f34;color:white}
+.btn-lime{background:#d8f078;color:#17251f}
+.search-box{border-radius:22px;box-shadow:0 22px 60px #17251f15}
+.section{padding-top:94px;padding-bottom:94px}
+.kicker{color:#6c826c}
+.section-head{margin-bottom:35px}
+.destination{min-height:335px;border-radius:24px}
+.destination img{filter:saturate(.92);transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .6s}
+.destination:hover img{transform:scale(1.075);filter:saturate(1.08)}
+.destination:after{background:linear-gradient(0deg,#10251fe8 0%,#10251f12 76%)}
+.dest-bottom h3{font-size:25px}
+.feature-band{background:linear-gradient(135deg,#edf1e8,#e7eee4)}
+.feature-photo{background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85');background-position:center 48%;min-height:480px}
+.floating-note{border-radius:18px;padding:17px 20px}
+.feature-icon{background:#fff;color:#214c3b}
+.package{border-radius:24px;padding:11px;background:#fff;box-shadow:0 5px 24px #17251f05}
+.package-img{border-radius:18px;height:220px}
+.package:hover{box-shadow:0 20px 45px #17251f12}
+.testimonial{background:linear-gradient(115deg,#173f34,#102c25)}
+.newsletter-card{background:linear-gradient(115deg,#e2f19a,#d5f078);border-radius:28px}
+.footer{background:#10251e}
+@media(max-width:650px){
+ .hero-card{min-height:590px;background-position:58% center}
+ .hero-card:before{background:linear-gradient(0deg,#0d211bf2 0%,#10251b9e 58%,#10251b15 100%)}
+ .hero h1{font-size:clamp(42px,12vw,51px)}
+ .section{padding-top:64px;padding-bottom:64px}
+ .destination{min-height:265px}
+ .feature-photo{min-height:360px}
+ .package-img{height:230px}
+}
+
 /* Syauqim71_Transport premium transport visual identity */
 :root{--ink:#0a1b2b;--muted:#637487;--paper:#f4f7fb;--green:#0b2942;--lime:#58e0d0;--line:#dfe7ef;--white:#fff;--radius:22px;--shadow:0 20px 55px #0a1b2b14}
 body{background:var(--paper);color:var(--ink)}
@@ -89,7 +132,7 @@ body{background:var(--paper);color:var(--ink)}
 </style>
 </head>
 <body>
-<div class="topbar">✦ SYAUQIM71_TRANSPORT &nbsp; · &nbsp; PERJALANAN NYAMAN, TUJUAN TANPA BATAS</div>
+<div class="topbar">✦ SYAUQIM71_TRANSPORT &nbsp; · &nbsp; YOUR JOURNEY, BEAUTIFULLY PLANNED</div>
 <header class="container nav">
 <a class="brand" href="#home" aria-label="Syauqim71_Transport beranda"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17 10 4l4 7 2-3 5 9H3Z"/><path d="m8 17 4-5 4 5"/></svg></span><span class="brand-name">Syauqim71_Transport</span></a>
 <nav class="nav-links" aria-label="Navigasi utama"><a href="#destinasi">Destinasi</a><a href="#pengalaman">Pengalaman</a><a href="#paket">Paket wisata</a><a href="#cerita">Cerita</a></nav>
@@ -97,7 +140,7 @@ body{background:var(--paper);color:var(--ink)}
 </header>
 <nav class="mobile-nav" id="mobileNav" aria-label="Navigasi mobile"><a href="#destinasi">Destinasi</a><a href="#pengalaman">Pengalaman</a><a href="#paket">Paket wisata</a><a href="#cerita">Cerita</a></nav>
 <main>
-<section class="container hero" id="home"><div class="hero-card"><div class="hero-content"><span class="eyebrow">TRANSPORTASI ANDAL · PERJALANAN LEBIH NYAMAN</span><h1>Perjalanan nyaman.<br>Tujuan <em>tanpa batas.</em></h1><p>Dari perjalanan harian hingga eksplorasi destinasi, nikmati pengalaman perjalanan yang nyaman, fleksibel, dan dirancang mengikuti kebutuhan Anda.</p><div class="hero-buttons"><a class="btn btn-lime" href="#destinasi">Temukan perjalanan <span>↗</span></a><a class="btn btn-light" href="#pengalaman">Kenali layanan kami</a></div><div class="hero-foot"><div class="avatars"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt=""><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt=""><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt=""></div></div></div></div>
+<section class="container hero" id="home"><div class="hero-card"><div class="hero-content"><span class="eyebrow">EXPLORE MORE · TRAVEL BETTER</span><h1>Temukan dunia.<br>Jalani <em>ceritamu.</em></h1><p>Temukan pesona Indonesia lewat destinasi istimewa, perjalanan penuh makna, dan pengalaman baru yang layak dikenang.</p><div class="hero-buttons"><a class="btn btn-lime" href="#destinasi">Jelajahi destinasi <span>↗</span></a><a class="btn btn-light" href="#pengalaman">Kenali layanan kami</a></div><div class="hero-foot"><div class="avatars"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt=""><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt=""><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt=""></div></div></div></div>
 <div class="search-wrap"><form class="search-box" id="searchForm"><div class="search-field"><label for="destination">MAU KE MANA?</label><select id="destination"><option value="">Semua destinasi</option><option>Bali</option><option>Raja Ampat</option><option>Labuan Bajo</option><option>Bromo</option><option>Yogyakarta</option><option>Lombok</option></select></div><div class="search-field"><label for="tripType">GAYA PERJALANAN</label><select id="tripType"><option value="">Semua pengalaman</option><option>Petualangan</option><option>Pantai & pulau</option><option>Budaya</option><option>Relaksasi</option></select></div><div class="search-field"><label for="travelers">JUMLAH PENJELAJAH</label><select id="travelers"><option>2 orang</option><option>1 orang</option><option>3–4 orang</option><option>5+ orang</option></select></div><button class="btn btn-dark" type="submit">Cari trip <span>↗</span></button></form></div></section>
 <section class="container section" id="destinasi"><div class="section-head"><div><span class="kicker">Jelajahi rute pilihan</span><h2>Ke mana perjalanan membawamu?</h2></div><p class="section-sub">Temukan inspirasi tujuan dan rute perjalanan untuk kebutuhan liburan, keluarga, maupun perjalanan bersama.</p></div>
 <div class="dest-grid">
@@ -106,8 +149,8 @@ body{background:var(--paper);color:var(--ink)}
 <article class="destination" data-destination="Labuan Bajo" data-type="Petualangan"><img loading="lazy" src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=700&q=80" alt="Kepulauan tropis Labuan Bajo"><div class="dest-top"><span class="pill">Bucket list</span><button class="heart" aria-label="Simpan Labuan Bajo" aria-pressed="false">♡</button></div><div class="dest-bottom"><h3>Labuan Bajo</h3><p>Wild at heart</p><div class="dest-meta"><span>◷ 3–5 hari</span><strong>Mulai 2,9 jt</strong></div></div></article>
 <article class="destination" data-destination="Bromo" data-type="Petualangan"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80" alt="Pegunungan berkabut saat matahari terbit"><div class="dest-top"><span class="pill">Nature escape</span><button class="heart" aria-label="Simpan Bromo" aria-pressed="false">♡</button></div><div class="dest-bottom"><h3>Gunung Bromo</h3><p>Chase the sunrise</p><div class="dest-meta"><span>◷ 2–3 hari</span><strong>Mulai 850 rb</strong></div></div></article>
 </div></section>
-<section class="feature-band" id="pengalaman"><div class="container feature-grid"><div class="feature-photo" role="img" aria-label="Pemandangan pulau tropis Indonesia"><div class="floating-note"><strong>Less scrolling. More living.</strong><span>Perjalanan yang terasa personal.</span></div></div><div class="feature-copy"><span class="kicker">Transportasi lebih dari sekadar perjalanan</span><h2>Layanan yang mengutamakan kenyamanan dan ketenangan perjalanan Anda.</h2><p>Kami percaya perjalanan yang baik dimulai dari perencanaan yang jelas, kenyamanan di perjalanan, dan pengalaman yang bisa diandalkan dari awal hingga tujuan.</p><div class="feature-list"><div class="feature-item"><div class="feature-icon">✳</div><div><strong>Perjalanan sesuai kebutuhan</strong><p>Pilihan perjalanan fleksibel untuk kebutuhan pribadi, keluarga, maupun rombongan.</p></div></div><div class="feature-item"><div class="feature-icon">⌁</div><div><strong>Rute dan tujuan pilihan</strong><p>Jelajahi berbagai tujuan dengan informasi yang membantu Anda merencanakan perjalanan.</p></div></div><div class="feature-item"><div class="feature-icon">♡</div><div><strong>Mengutamakan kenyamanan</strong><p>Rencanakan perjalanan dengan lebih praktis dan nikmati setiap kilometer.</p></div></div></div><a href="#paket" class="btn btn-dark">Temukan pengalamanmu ↗</a></div></div></section>
-<section class="container section" id="paket"><div class="section-head"><div><span class="kicker">Dipilih untukmu</span><h2>Pilihan perjalanan populer.</h2></div><p class="section-sub">Lihat inspirasi paket perjalanan dan tentukan pilihan yang sesuai dengan rencana Anda.</p></div>
+<section class="feature-band" id="pengalaman"><div class="container feature-grid"><div class="feature-photo" role="img" aria-label="Pemandangan pulau tropis Indonesia"><div class="floating-note"><strong>Less scrolling. More living.</strong><span>Perjalanan yang terasa personal.</span></div></div><div class="feature-copy"><span class="kicker">Transportasi lebih dari sekadar perjalanan</span><h2>Setiap perjalanan punya cerita yang menunggu untuk ditemukan.</h2><p>Dari lanskap tropis hingga budaya lokal yang kaya, rencanakan petualangan dengan inspirasi yang membuat setiap momen terasa istimewa.</p><div class="feature-list"><div class="feature-item"><div class="feature-icon">✳</div><div><strong>Rute untuk setiap rasa ingin tahu</strong><p>Temukan pantai tersembunyi, lanskap pegunungan, dan kota penuh cerita.</p></div></div><div class="feature-item"><div class="feature-icon">⌁</div><div><strong>Pengalaman lokal autentik</strong><p>Kenali destinasi lewat budaya, kuliner, alam, dan keramahan masyarakat setempat.</p></div></div><div class="feature-item"><div class="feature-icon">♡</div><div><strong>Travel dengan lebih bermakna</strong><p>Jelajahi dengan rasa ingin tahu sambil menghargai alam dan komunitas lokal.</p></div></div></div><a href="#paket" class="btn btn-dark">Temukan pengalamanmu ↗</a></div></div></section>
+<section class="container section" id="paket"><div class="section-head"><div><span class="kicker">Dipilih untukmu</span><h2>Destinasi dan pengalaman pilihan.</h2></div><p class="section-sub">Dari liburan santai hingga petualangan aktif, temukan ide perjalanan yang cocok dengan gayamu.</p></div>
 <div class="packages" id="packageGrid">
 <article class="package" data-destination="Bali" data-type="Pantai & pulau"><div class="package-img"><img loading="lazy" src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Pemandangan pulau tropis"><span class="pill">Best seller</span></div><div class="package-body"><span class="package-location">📍 Bali, Indonesia</span><h3>Bali Slow Living Escape</h3><div class="package-meta"><span>◷ 4 hari 3 malam</span><span>✧ Alam & budaya</span></div><div class="package-bottom"><span class="price">Mulai dari<strong>Rp1.850.000</strong></span><a class="circle-arrow package-link" href="#kontak" aria-label="Tanyakan paket Bali">↗</a></div></div></article>
 <article class="package" data-destination="Labuan Bajo" data-type="Petualangan"><div class="package-img"><img loading="lazy" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Perahu berlayar di perairan biru"><span class="pill">Adventure</span></div><div class="package-body"><span class="package-location">📍 Labuan Bajo, NTT</span><h3>Komodo Island Expedition</h3><div class="package-meta"><span>◷ 3 hari 2 malam</span><span>✧ Laut & trekking</span></div><div class="package-bottom"><span class="price">Mulai dari<strong>Rp2.950.000</strong></span><a class="circle-arrow package-link" href="#kontak" aria-label="Tanyakan paket Labuan Bajo">↗</a></div></div></article>
