@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7f7f2"><meta name="description" content="Jelajahi keindahan Indonesia bersama NusaTrip — perjalanan autentik, itinerary pilihan, dan pengalaman tak terlupakan.">
+<meta name="theme-color" content="#f7f7f2"><meta name="description" content="Jelajahi destinasi Indonesia bersama NusaTrip. Temukan inspirasi destinasi, paket perjalanan, dan pengalaman wisata yang sesuai gaya liburanmu."><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="NusaTrip"><meta property="og:title" content="NusaTrip — Find Your Way to Wonder"><meta property="og:description" content="Temukan inspirasi destinasi dan paket perjalanan untuk menjelajahi keindahan Indonesia."><meta name="twitter:card" content="summary_large_image">
 <title>NusaTrip — Find Your Way to Wonder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 <header class="container nav">
 <a class="brand" href="#home" aria-label="NusaTrip home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17 10 4l4 7 2-3 5 9H3Z"/><path d="m8 17 4-5 4 5"/></svg></span>NusaTrip<span style="color:#75927e">.</span></a>
 <nav class="nav-links" aria-label="Navigasi utama"><a href="#destinasi">Destinasi</a><a href="#pengalaman">Pengalaman</a><a href="#paket">Paket wisata</a><a href="#cerita">Cerita</a></nav>
-<div class="nav-actions"><a class="btn btn-dark" href="#paket">Temukan perjalanan ↗</a><button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button></div>
+<div class="nav-actions"><a class="btn btn-dark" href="#paket">Temukan perjalanan ↗</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNav" aria-expanded="false">☰</button></div>
 </header>
 <nav class="mobile-nav" id="mobileNav" aria-label="Navigasi mobile"><a href="#destinasi">Destinasi</a><a href="#pengalaman">Pengalaman</a><a href="#paket">Paket wisata</a><a href="#cerita">Cerita</a></nav>
 <main>
@@ -45,14 +45,90 @@
 <footer class="footer"><div class="container"><div class="footer-top"><div><a class="brand" href="#home"><span class="brand-mark">✳</span>NusaTrip<span style="color:var(--lime)">.</span></a><p>Menemukan keindahan Indonesia lewat perjalanan yang lebih dekat, autentik, dan bermakna.</p><p>Made with curiosity in Indonesia 🇮🇩</p></div><div><h4>Jelajahi</h4><div class="footer-links"><a href="#destinasi">Destinasi</a><a href="#paket">Paket wisata</a><a href="#pengalaman">Pengalaman</a></div></div><div><h4>Informasi</h4><div class="footer-links"><a href="#cerita">Cerita traveler</a><a href="#kontak">Hubungi kami</a><a href="#kontak">FAQ perjalanan</a></div></div><div><h4>Ikuti perjalanan</h4><div class="footer-links"><a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://youtube.com/" target="_blank" rel="noreferrer">YouTube ↗</a><a href="https://tiktok.com/" target="_blank" rel="noreferrer">TikTok ↗</a></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> NusaTrip. Demo portfolio website.</span><span>Designed for curious souls · Indonesia</span></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-const $=s=>document.querySelector(s);const toast=$('#toast');let toastTimer;
-function notify(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3000)}
+'use strict';
+const $=s=>document.querySelector(s);
+const toast=$('#toast');
+let toastTimer;
+function notify(message){
+  toast.textContent=message;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toast.classList.remove('show'),3000);
+}
 $('#year').textContent=new Date().getFullYear();
-$('#menuToggle').addEventListener('click',()=>{const open=$('#mobileNav').classList.toggle('open');$('#menuToggle').setAttribute('aria-expanded',String(open));$('#menuToggle').textContent=open?'×':'☰'});
-document.querySelectorAll('#mobileNav a').forEach(a=>a.addEventListener('click',()=>{$('#mobileNav').classList.remove('open');$('#menuToggle').setAttribute('aria-expanded','false');$('#menuToggle').textContent='☰'}));
-document.querySelectorAll('.heart').forEach(b=>b.addEventListener('click',()=>{const active=b.classList.toggle('active');b.textContent=active?'♥':'♡';b.setAttribute('aria-pressed',String(active));notify(active?'Destinasi disimpan ke favorit':'Dihapus dari favorit')}));
-$('#searchForm').addEventListener('submit',e=>{e.preventDefault();const destination=$('#destination').value,type=$('#tripType').value;let shown=0;document.querySelectorAll('.destination,.package').forEach(card=>{const match=(!destination||card.dataset.destination===destination)&&(!type||card.dataset.type===type);card.style.display=match?'':'none';if(match)shown++});$('#destinasi').scrollIntoView({behavior:'smooth'});notify(shown?shown+' pilihan perjalanan ditemukan':'Belum ada paket yang cocok. Coba pilihan lain.');});
-$('#subscribeForm').addEventListener('submit',e=>{e.preventDefault();notify('Terima kasih! Form demo ini belum terhubung ke layanan email.');e.target.reset()});
-document.querySelectorAll('.package-link').forEach(a=>a.addEventListener('click',()=>notify('Form pemesanan demo — hubungkan WhatsApp atau CRM untuk menerima pertanyaan.')));
+
+const menuToggle=$('#menuToggle');
+const mobileNav=$('#mobileNav');
+menuToggle.addEventListener('click',()=>{
+  const open=mobileNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded',String(open));
+  menuToggle.setAttribute('aria-label',open?'Tutup menu navigasi':'Buka menu navigasi');
+  menuToggle.textContent=open?'×':'☰';
+});
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mobileNav.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded','false');
+  menuToggle.setAttribute('aria-label','Buka menu navigasi');
+  menuToggle.textContent='☰';
+}));
+
+const favoriteKey='nusatrip:favorites:v1';
+let savedFavorites=[];
+try{
+  const stored=JSON.parse(localStorage.getItem(favoriteKey)||'[]');
+  if(Array.isArray(stored)) savedFavorites=stored.filter(v=>typeof v==='string');
+}catch(error){ /* Browser storage can be unavailable. */ }
+function renderFavorite(button,active){
+  button.classList.toggle('active',active);
+  button.textContent=active?'♥':'♡';
+  button.setAttribute('aria-pressed',String(active));
+}
+document.querySelectorAll('.heart').forEach(button=>{
+  const name=button.closest('.destination')?.dataset.destination;
+  renderFavorite(button,Boolean(name&&savedFavorites.includes(name)));
+  button.addEventListener('click',()=>{
+    if(!name)return;
+    const active=!savedFavorites.includes(name);
+    savedFavorites=active?[...savedFavorites,name]:savedFavorites.filter(item=>item!==name);
+    renderFavorite(button,active);
+    try{localStorage.setItem(favoriteKey,JSON.stringify(savedFavorites));}
+    catch(error){notify('Favorit berlaku untuk sesi ini saja karena penyimpanan browser tidak tersedia.');return;}
+    notify(active?'Destinasi disimpan ke favorit':'Destinasi dihapus dari favorit');
+  });
+});
+
+$('#searchForm').addEventListener('submit',event=>{
+  event.preventDefault();
+  const destination=$('#destination').value;
+  const type=$('#tripType').value;
+  const travelers=$('#travelers').value;
+  const destinationCards=[...document.querySelectorAll('.destination')];
+  const packageCards=[...document.querySelectorAll('.package')];
+  const matches=card=>(!destination||card.dataset.destination===destination)&&(!type||card.dataset.type===type);
+  let destinationCount=0,packageCount=0;
+  destinationCards.forEach(card=>{
+    const match=matches(card);
+    card.hidden=!match;
+    if(match)destinationCount++;
+  });
+  packageCards.forEach(card=>{
+    const match=matches(card);
+    card.hidden=!match;
+    if(match)packageCount++;
+  });
+  const total=destinationCount+packageCount;
+  $('#destinasi').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  const countText=total?`${destinationCount} destinasi dan ${packageCount} paket cocok`:'Belum ada hasil yang cocok. Coba ubah destinasi atau gaya perjalanan.';
+  notify(`${countText} · ${travelers}`);
+});
+
+$('#subscribeForm').addEventListener('submit',event=>{
+  event.preventDefault();
+  notify('Form newsletter masih demo dan belum mengirim email. Hubungkan layanan email sebelum dipublikasikan.');
+  event.target.reset();
+});
+document.querySelectorAll('.package-link').forEach(link=>link.addEventListener('click',()=>{
+  notify('Pemesanan belum aktif. Hubungkan formulir kontak atau WhatsApp bisnis untuk menerima permintaan wisata.');
+}));
 </script>
 </body></html>
