@@ -109,11 +109,13 @@ $('#searchForm').addEventListener('submit',event=>{
   destinationCards.forEach(card=>{
     const match=matches(card);
     card.hidden=!match;
+    card.style.display=match?'':'none';
     if(match)destinationCount++;
   });
   packageCards.forEach(card=>{
     const match=matches(card);
     card.hidden=!match;
+    card.style.display=match?'':'none';
     if(match)packageCount++;
   });
   const total=destinationCount+packageCount;
