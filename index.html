@@ -486,10 +486,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .customer-review-match .customer-review-card .person span{font-size:13px;color:#b8cbc3;line-height:1.6;margin-top:4px}
 .customer-review-match .customer-review-card .testimonial-note{display:block;margin-top:22px;padding-left:14px;border-left:2px solid #d7f18c;font-size:11px;line-height:1.75;color:#a9c0b5}
 @media(max-width:760px){.customer-review-match{padding:58px 0}.customer-review-match .testimonial-inner{grid-template-columns:1fr;gap:34px}.customer-review-match .testimonial-intro h2{font-size:clamp(34px,9vw,46px)}.customer-review-match .customer-review-card .quote{font-size:clamp(21px,5.7vw,26px);line-height:1.55}.customer-review-match .customer-review-card .testimonial-note{font-size:11px}}
+
+/* Refined premium brand strip */
+.topbar{padding:0 24px;background:#102a20;color:#e8efe8;border-bottom:1px solid rgba(255,255,255,.09);text-align:initial;font-size:10px;letter-spacing:.13em}
+.topbar-inner{width:min(1160px,100%);min-height:39px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.topbar-brand{display:flex;align-items:center;gap:10px;font-weight:800;white-space:nowrap}
+.topbar-symbol{width:22px;height:22px;display:grid;place-items:center;border:1px solid #d6f36a;border-radius:7px;color:#d6f36a;font-size:8px;font-weight:900;letter-spacing:-.04em}
+.topbar-dot{color:#d6f36a}
+.topbar-divider{height:15px;width:1px;background:#ffffff35;margin:0 2px}
+.topbar-category{color:#bdcbbf;font-size:9px;letter-spacing:.17em}
+.topbar-tagline{color:#b9c9bd;font-size:9px;font-weight:600;letter-spacing:.16em;text-align:right}
+@media(max-width:650px){.topbar{padding:0 14px}.topbar-inner{min-height:34px;justify-content:center;gap:0}.topbar-brand{gap:7px;font-size:9px;letter-spacing:.1em}.topbar-symbol{width:19px;height:19px;font-size:7px;border-radius:6px}.topbar-divider{height:12px;margin:0 1px}.topbar-category{font-size:8px;letter-spacing:.12em}.topbar-tagline{display:none}}
+
 </style>
 </head>
 <body>
-<div class="topbar">✦ SYAUQIM71_TRANSPORT &nbsp; · &nbsp; YOUR JOURNEY, BEAUTIFULLY PLANNED</div>
+<div class="topbar"><div class="topbar-inner"><span class="topbar-brand"><span class="topbar-symbol" aria-hidden="true">S71</span><span>SYAUQIM71<span class="topbar-dot">.</span>TRANSPORT</span><span class="topbar-divider" aria-hidden="true"></span><span class="topbar-category">TOUR &amp; TRAVEL</span></span><span class="topbar-tagline">YOUR JOURNEY, BEAUTIFULLY PLANNED</span></div></div>
 <header class="container nav">
 <a class="brand" href="#home" aria-label="Syauqim71.Transport, beranda"><span class="brand-mark logo-shield" aria-hidden="true"><img src="logo-s71.svg?v=6" alt="" width="48" height="54"></span><span class="brand-name">Syauqim71.Transport</span></a>
 <nav class="nav-links" aria-label="Navigasi utama"><a href="#destinasi">Destinasi</a><a href="#pengalaman">Pengalaman</a><a href="#paket">Paket wisata</a><a href="#cerita">Cerita</a></nav>
