@@ -639,6 +639,69 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
   .packages .price strong{font-size:17px}
 }
 
+
+/* Footer layout overhaul — balanced columns on desktop and a deliberate mobile stack */
+.footer{position:relative;isolation:isolate;overflow:hidden;padding:clamp(42px,5.5vw,72px) 0 20px}
+.footer:before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 92% 0%,rgba(119,163,123,.16),transparent 42%);pointer-events:none}
+.footer .container{width:min(100% - 48px,1240px);margin-inline:auto}
+.footer-top.footer-pro{grid-template-columns:minmax(260px,1.55fr) repeat(3,minmax(140px,1fr));gap:clamp(24px,3vw,44px);align-items:start}
+.footer-about{max-width:440px}
+.footer-about .brand{display:inline-flex;align-items:center;text-decoration:none}
+.footer .brand-mark.logo-shield{flex:0 0 46px;display:grid;place-items:center;overflow:hidden}
+.footer .brand-mark.logo-shield img{display:block;width:100%;height:100%;object-fit:contain}
+.footer-about .brand-name{line-height:1.25;letter-spacing:-.035em}
+.footer-lead{margin:0 0 18px;max-width:410px!important}
+.footer-tags{display:flex;flex-wrap:wrap;gap:8px}
+.footer-tags span{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:#d2ded5;background:rgba(255,255,255,.045);padding:7px 11px;font-size:10px}
+.footer-promise{display:flex;align-items:flex-start;gap:12px;max-width:410px;margin-top:23px;padding-top:19px;border-top:1px solid rgba(255,255,255,.13)}
+.footer-promise>span:last-child{display:flex;flex-direction:column;gap:5px}
+.footer-promise-mark{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:50%;background:#d6f36a;color:#19382c;font-weight:800}
+.footer-top.footer-pro>div:not(.footer-about){min-width:0}
+.footer-top.footer-pro h4{margin:6px 0 18px;color:#d6f36a;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.footer-links{display:flex;flex-direction:column;gap:12px}
+.footer-links a{display:flex;align-items:baseline;justify-content:space-between;gap:10px;color:#d3ded6;text-decoration:none;font-size:12px;line-height:1.6;transition:color .18s ease}
+.footer-links a:hover{color:#d6f36a}
+.footer-links a span{flex:0 0 auto;color:#d6f36a}
+.footer-small{margin:4px 0 0;color:#9fb4a6!important;font-size:10px!important;line-height:1.8!important}
+.footer-contact-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:fit-content;max-width:100%;margin-top:22px;border-radius:999px;padding:13px 17px;background:#d6f36a;color:#19382c;text-decoration:none;font-size:11px;font-weight:800;line-height:1.4}
+.footer-contact-btn span{flex:0 0 auto}
+.footer-bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:12px 24px;border-top:1px solid rgba(255,255,255,.13);padding-top:19px;color:#9fb4a6;font-size:10px;line-height:1.7}
+.footer-bottom span{min-width:0}
+.footer-bottom span:last-child{text-align:right}
+@media(max-width:1000px){
+ .footer-top.footer-pro{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 26px}
+ .footer-top.footer-pro>.footer-about{grid-column:1/-1;max-width:650px}
+ .footer-lead,.footer-promise{max-width:580px!important}
+}
+@media(max-width:640px){
+ .footer{padding:38px 0 18px}
+ .footer .container{width:calc(100% - 36px)}
+ .footer-top.footer-pro{grid-template-columns:minmax(0,1fr)!important;gap:27px;padding-bottom:28px}
+ .footer-top.footer-pro>.footer-about{grid-column:auto;max-width:none}
+ .footer .brand{gap:11px;margin-bottom:14px}
+ .footer .brand-mark.logo-shield{width:42px;height:48px;flex-basis:42px}
+ .footer-about .brand-name{font-size:18px}
+ .footer-lead{font-size:12px!important;line-height:1.85!important;margin-bottom:15px!important}
+ .footer-tags{gap:7px}
+ .footer-tags span{font-size:10px;padding:7px 10px}
+ .footer-promise{margin-top:18px;padding-top:16px;max-width:none!important}
+ .footer-promise strong{font-size:12px}
+ .footer-promise small{font-size:11px;line-height:1.7}
+ .footer-top.footer-pro h4{font-size:10px;letter-spacing:.12em;margin:0 0 12px}
+ .footer-links{gap:10px}
+ .footer-links a{font-size:12px;line-height:1.65;padding:2px 0}
+ .footer-small{max-width:520px;font-size:10px!important;line-height:1.8!important}
+ .footer-contact-btn{width:100%;box-sizing:border-box;margin-top:17px;padding:14px 16px;font-size:12px}
+ .footer-bottom{flex-direction:column;gap:5px;padding-top:16px;font-size:10px}
+ .footer-bottom span:last-child{text-align:left}
+}
+@media(max-width:360px){
+ .footer .container{width:calc(100% - 28px)}
+ .footer-about .brand-name{font-size:16px}
+ .footer-tags span{font-size:9px;padding:6px 8px}
+ .footer-bottom{font-size:9px}
+}
+
 </style>
 </head>
 <body>
