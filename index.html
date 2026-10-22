@@ -601,6 +601,44 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 @media(max-width:360px){.footer-top.footer-pro{grid-template-columns:minmax(0,1fr);gap:24px}.footer-top.footer-pro>.footer-about{grid-column:auto}.footer-top.footer-pro h4{margin-bottom:12px}.footer-contact-btn{width:auto}.footer-bottom{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.footer *{transition:none!important}}
 
+
+/* Fix package card responsiveness: especially the Yogyakarta heritage card */
+@media(max-width:650px){
+  .packages{grid-template-columns:minmax(0,1fr)!important;gap:18px!important;align-items:stretch}
+  .packages .package,
+  .packages .package:last-child,
+  .packages .package[data-destination="Yogyakarta"]{
+    display:flex!important;flex-direction:column!important;align-items:stretch!important;
+    width:100%;min-width:0;height:auto;box-sizing:border-box;padding:12px;border-radius:22px;
+  }
+  .packages .package-img,
+  .packages .package[data-destination="Yogyakarta"] .package-img{
+    display:block;width:100%;height:clamp(190px,58vw,270px);min-width:0;flex:none;
+    border-radius:15px;overflow:hidden;
+  }
+  .packages .package-img img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+  .packages .package-body,
+  .packages .package[data-destination="Yogyakarta"] .package-body{
+    width:100%;min-width:0;box-sizing:border-box;padding:16px 5px 6px;display:flex;flex-direction:column;
+  }
+  .packages .package-location{display:block;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+  .packages .package h3{font-size:clamp(18px,5vw,22px);line-height:1.3;overflow-wrap:anywhere;margin:7px 0 10px}
+  .packages .package-meta{display:flex;flex-wrap:wrap;gap:8px 14px;min-height:0;padding-bottom:14px;font-size:11px;line-height:1.5}
+  .packages .package-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;min-width:0}
+  .packages .price{display:block;min-width:0;flex:1;font-size:11px;line-height:1.5}
+  .packages .price strong{font-size:clamp(18px,5vw,22px);line-height:1.35;overflow-wrap:anywhere;word-break:normal}
+  .packages .group-total{max-width:100%;font-size:10px;line-height:1.6;overflow-wrap:anywhere}
+  .packages .circle-arrow{width:38px;height:38px;flex:0 0 38px}
+}
+@media(max-width:360px){
+  .packages .package{padding:10px}
+  .packages .package-img{height:185px}
+  .packages .package-body{padding:13px 3px 4px}
+  .packages .package-meta{gap:7px 10px;font-size:10px}
+  .packages .package-bottom{gap:8px}
+  .packages .price strong{font-size:17px}
+}
+
 </style>
 </head>
 <body>
