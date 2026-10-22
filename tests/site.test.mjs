@@ -26,7 +26,7 @@ test('every image has alternative text and external new tabs are protected', () 
   assert.ok(images.length >= 1, 'Expected destination imagery');
   for (const img of images) assert.match(img, /\balt="[^"]*"/i, `Image missing alt attribute: ${img}`);
   const newTabLinks = [...html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/gi)].map(match => match[0]);
-  for (const link of newTabLinks) assert.match(link, /\brel="[^"]*noopener[^"]*"/i, `New-tab link should include rel=noopener: ${link}`);
+  for (const link of newTabLinks) assert.match(link, /\brel="[^"]*(?:noopener|noreferrer)[^"]*"/i, `New-tab link should include rel=noopener or noreferrer: ${link}`);
 });
 
 test('inline JavaScript parses without syntax errors', () => {
